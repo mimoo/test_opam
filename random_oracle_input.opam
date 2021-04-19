@@ -1,0 +1,14 @@
+opam-version: "2.0"
+maintainer: "opensource@o1labs.org"
+authors: "O(1) Labs, LLC <opensource@o1labs.org>"
+license: "MIT"
+homepage: "https://github.com/MinaProtocol/crypto"
+bug-reports: "https://github.com/MinaProtocol/crypto/issues"
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+]
+dev-repo: "git+https://github.com/MinaProtocol/crypto.git"
+synopsis: "Mina crypto library"
+description: """
+crypto library...
+"""
