@@ -1,0 +1,29 @@
+name: changes
+
+# Why `on: repository_dispatch`?
+#
+# If we trigger this action on pull_request events,
+# then it will run with the forked repo GITHUB_TOKEN
+# this is a problem as it won't allow the action to write
+# a comment on the PR in the last step.
+#
+# instead, we trigger this remotely via a bot we're running ourselves.
+on:
+  pull_request
+
+jobs:
+  run_changes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v2
+
+      - name: Use OCaml 4.12.0
+        uses: avsm/setup-ocaml@v1
+        with:
+          ocaml-version: 4.12.0
+
+      - name: run opam-dune-lint
+        run: |
+          opam-dune-lint
