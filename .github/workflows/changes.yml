@@ -38,4 +38,6 @@ jobs:
           # install dependencies needed with opam
           opam install . --deps-only
 
+          # dune
+          opam install dune -y
           dune build
