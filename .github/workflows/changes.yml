@@ -47,9 +47,10 @@ jobs:
 
           # random oracle input
           opam install ppx_jane
+          opam install core_kernel
+          opam install ppx_version
           dune build ./lib/random_oracle_input --verbose
 
-          opam install ppx_versino
           dune build -p random_oracle_input --verbose
 
           # rest
