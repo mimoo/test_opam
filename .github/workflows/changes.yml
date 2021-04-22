@@ -19,10 +19,10 @@ jobs:
       - name: Checkout PR
         uses: actions/checkout@v2
 
-      - name: Use OCaml 4.12.0
+      - name: Use OCaml 4.07.1
         uses: avsm/setup-ocaml@v1
         with:
-          ocaml-version: 4.12.0
+          ocaml-version: 4.07.1
 
       - name: set up opam repository
         run: |
