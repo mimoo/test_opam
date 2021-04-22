@@ -47,9 +47,12 @@ jobs:
 
       - name: test random_oracle_input
         run: |
+          set -x
           opam install ppx_jane
           opam install core_kernel
           opam install ppx_version
+          eval $(opam env)
+
           dune build ./lib/random_oracle_input --verbose
 
           dune build -p random_oracle_input --verbose
@@ -58,11 +61,13 @@ jobs:
 
       - name: test random_oracle
         run: |
+          set -x
           opam install ppx_deriving
           opam install o1trace
           opam install pickles
           opam install snarky
           opam install sponge
+          eval $(opam env)
 
           dune build ./lib/random_oracle --verbose
 
@@ -72,8 +77,12 @@ jobs:
 
       - name: test vrf_lib
         run: |
+          set -x
+          eval $(opam env)
           dune build ./lib/vrf_lib
 
       - name: test signature_lib
         run: |
+          set -x
+          eval $(opam env)
           dune build ./lib/signature_lib
