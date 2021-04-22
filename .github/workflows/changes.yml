@@ -42,7 +42,11 @@ jobs:
           opam install dune -y
           eval $(opam env)
 
+          # debug
+          dune installed-libraries
+
           # 
+          opam install ppx_jane
           dune build -p random_oracle_input
 
           dune build -p random_oracle
