@@ -47,10 +47,10 @@ jobs:
 
           # 
           opam install ppx_jane
-          dune build -p random_oracle_input
+          dune build ./lib/random_oracle_input -v
 
-          dune build -p random_oracle
+          dune build ./lib/random_oracle
 
-          dune build -p vrf_lib
+          dune build ./lib/vrf_lib
 
-          dune build -p signature_lib
+          dune build ./lib/signature_lib
