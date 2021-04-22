@@ -45,10 +45,14 @@ jobs:
           # debug
           dune installed-libraries
 
-          # 
+          # random oracle input
           opam install ppx_jane
-          dune build ./lib/random_oracle_input -v
+          dune build ./lib/random_oracle_input --verbose
 
+          opam install ppx_versino
+          dune build -p random_oracle_input --verbose
+
+          # rest
           dune build ./lib/random_oracle
 
           dune build ./lib/vrf_lib
