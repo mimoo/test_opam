@@ -30,7 +30,8 @@ jobs:
       
       - name: pin packages
         run: |
-          opam pin add https://github.com/o1-labs/snarky.git -y # lots of packages there
           opam install . --deps-only
+
+          opam pin add https://github.com/o1-labs/snarky.git -y
 
           dune build
