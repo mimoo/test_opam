@@ -53,9 +53,19 @@ jobs:
 
           dune build -p random_oracle_input --verbose
 
-          # rest
-          dune build ./lib/random_oracle
+          # random oracle
+          opam install random_oracle
+          opam install ppx_deriving
+          opam install o1trace
+          opam install pickles
+          opam install snarky
+          opam install sponge
+          
+          dune build ./lib/random_oracle --verbose
 
+          dune build -p random_oracle --verbose
+
+          #
           dune build ./lib/vrf_lib
 
           dune build ./lib/signature_lib
