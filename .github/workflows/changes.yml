@@ -41,4 +41,12 @@ jobs:
           # dune
           opam install dune -y
           eval $(opam env)
-          dune build
+
+          # 
+          dune build -p random_oracle_input
+
+          dune build -p random_oracle
+
+          dune build -p vrf_lib
+
+          dune build -p signature_lib
