@@ -40,4 +40,5 @@ jobs:
 
           # dune
           opam install dune -y
+          eval $(opam env)
           dune build

@@ -1,7 +1,7 @@
 (library
  (name random_oracle)
  (public_name random_oracle)
- ;; (preprocessor_deps ../../config.mlh)
+ (preprocessor_deps ../../config.mlh)
  (instrumentation
   (backend bisect_ppx))
  (libraries
