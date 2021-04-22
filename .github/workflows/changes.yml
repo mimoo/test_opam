@@ -9,7 +9,7 @@ name: build
 #
 # instead, we trigger this remotely via a bot we're running ourselves.
 on:
-  pull_request
+  [pull_request, push]
 
 jobs:
   run_build:
