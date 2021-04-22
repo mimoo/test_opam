@@ -30,10 +30,11 @@ jobs:
       
       - name: pin packages
         run: |
-          opam pin add . -n # pin the external stuff without installing
+          # pin the external stuff without installing yet
+          opam pin add . -n
+          opam pin add https://github.com/o1-labs/snarky.git -y -n 
 
-          opam pin add https://github.com/o1-labs/snarky.git -y
-
-          opam install . --deps-only # install what's missing
+          # install dependencies needed with opam
+          opam install . --deps-only
 
           dune build
