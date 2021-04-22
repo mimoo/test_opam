@@ -45,7 +45,8 @@ jobs:
           # debug
           dune installed-libraries
 
-          # random oracle input
+      - name: test random_oracle_input
+        run: |
           opam install ppx_jane
           opam install core_kernel
           opam install ppx_version
@@ -53,19 +54,26 @@ jobs:
 
           dune build -p random_oracle_input --verbose
 
-          # random oracle
-          opam install random_oracle
+          opam install random_oracle_input
+
+      - name: test random_oracle
+        run: |
           opam install ppx_deriving
           opam install o1trace
           opam install pickles
           opam install snarky
           opam install sponge
-          
+
           dune build ./lib/random_oracle --verbose
 
           dune build -p random_oracle --verbose
 
-          #
+          opam install random_oracle
+
+      - name: test vrf_lib
+        run: |
           dune build ./lib/vrf_lib
 
+      - name: test signature_lib
+        run: |
           dune build ./lib/signature_lib
