@@ -1,5 +1,5 @@
 opam-version: "2.0"
-name: "structured_log_events"
+name: "pickls"
 maintainer: "opensource@o1labs.org"
 authors: "O(1) Labs, LLC <opensource@o1labs.org>"
 license: "MIT"

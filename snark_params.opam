@@ -5,23 +5,6 @@ authors: "O(1) Labs, LLC <opensource@o1labs.org>"
 license: "MIT"
 homepage: "https://github.com/MinaProtocol/crypto"
 bug-reports: "https://github.com/MinaProtocol/crypto/issues"
-depends: [
-    "ocaml" {>= "4.07.0"}
-    "sponge"
-    "group_map"
-    "fold_lib"
-    "o1trace"
-    "digestif"
-    "tuple_lib"
-    "bitstring_lib"
-    "snarky_group_map"
-    "core_kernel"
-    "snarky"
-    "snarky_curves"
-    "snark_bits"
-    "pickles"
-    "crypto_params"
-]
 build: [
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
